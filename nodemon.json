@@ -1,0 +1,8 @@
+{
+  "watch": [
+    "src"
+  ],
+  "colours": true,
+  "ext": ".ts,.js",
+  "exec": "ts-node ./src/index.ts"
+}
