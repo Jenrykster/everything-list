@@ -17,10 +17,14 @@
     "eslint-plugin-promise": "^6.0.0",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "*"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
+  },
+  "scripts": {
+    "dev": "nodemon"
   }
 }
