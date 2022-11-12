@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 
 const info = (...params: any[]) => {
-  console.info('INFO:', ...params);
+  console.info('\x1b[36mINFO:', ...params);
 };
 
 const error = (...params: any[]) => {
-  console.error('ERROR:', ...params);
+  console.error('\x1b[31mERROR:', ...params);
 };
 
 export {
