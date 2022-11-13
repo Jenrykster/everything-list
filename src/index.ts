@@ -1,17 +1,23 @@
-import { info } from '@utils/logger';
-import * as dotenv from 'dotenv';
 import express from 'express';
-
-dotenv.config();
+import connectToDB from '@utils/db';
+import logger from '@utils/logger';
+import { MONGO_DB_URI, PORT } from '@utils/config';
 
 const app = express();
 
-const port = process.env.PORT;
+const startTheApp = async () => {
+  try {
+    await connectToDB(MONGO_DB_URI);
+    app.get('/', (req, res) => {
+      res.send('Hello World!');
+    });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+    app.listen(PORT, () => {
+      logger.info(`Running on port: ${PORT}`);
+    });
+  } catch (error) {
+    logger.error(error);
+  }
+};
 
-app.listen(port, () => {
-  info(`Running on port: ${port}`);
-});
+startTheApp();
