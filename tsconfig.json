@@ -96,6 +96,12 @@
     "paths": {
       "@utils/*": [
         "utils/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@controllers/*": [
+        "controllers/*"
       ]
     },
   },
